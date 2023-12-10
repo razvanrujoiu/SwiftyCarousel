@@ -70,9 +70,9 @@ struct ContentView: View {
 
 ```swift
 let sampleItems: [AnyView] = [
-    AnyView(Text("Item 1")),
-    AnyView(Image(systemName: "star.fill")),
-    AnyView(Rectangle().foregroundColor(.blue))
+    AnyView(Color.teal),
+    AnyView(Color.red),
+    AnyView(Color.blue)
 ]
 
 struct ContentView: View {
