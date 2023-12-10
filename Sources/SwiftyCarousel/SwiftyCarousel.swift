@@ -136,6 +136,7 @@ public struct SwiftyCarousel<T: View>: View where T:Hashable {
     public var showPagingIndicator: Bool
     public var pagingIndicatorActiveColor: Color
     public var pagingIndicatorInactiveColor: Color
+    public var pagingIndicatorSize: CGFloat
     
     public init(items: [T],
          cardWidth: CGFloat = Constants.cardWidth,
@@ -146,7 +147,8 @@ public struct SwiftyCarousel<T: View>: View where T:Hashable {
          cardCornerRadius: CGFloat = Constants.cardRadius,
          showPagingIndicator: Bool = true,
          pagingIndicatorActiveColor: Color = .blue,
-         pagingIndicatorInactiveColor: Color = .gray) {
+                pagingIndicatorInactiveColor: Color = .gray,
+                pagingIndicatorSize: CGFloat = 8) {
         self.items = items
         self.cardWidth = cardWidth
         self.cardHeight = cardHeight
@@ -157,6 +159,7 @@ public struct SwiftyCarousel<T: View>: View where T:Hashable {
         self.showPagingIndicator = showPagingIndicator
         self.pagingIndicatorActiveColor = pagingIndicatorActiveColor
         self.pagingIndicatorInactiveColor = pagingIndicatorInactiveColor
+        self.pagingIndicatorSize = pagingIndicatorSize
     }
         
     public var body: some View {
@@ -188,7 +191,8 @@ public struct SwiftyCarousel<T: View>: View where T:Hashable {
             ForEach(Array(items.enumerated()), id: \.offset) { index, item in
                 Circle()
                     .fill(index == carouselState.activeCardIndex ? pagingIndicatorActiveColor : pagingIndicatorInactiveColor)
-                    .frame(width: 8, height: 8)
+                    .frame(width: pagingIndicatorSize,
+                           height: pagingIndicatorSize)
             }
         }
     }
