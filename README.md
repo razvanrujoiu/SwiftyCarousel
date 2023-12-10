@@ -1,3 +1,3 @@
 A simple carousel library component for your SwiftUI app
 
-![](carousel.gif)
+![](carousel.gif = 100x200)
