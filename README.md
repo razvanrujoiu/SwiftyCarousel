@@ -79,12 +79,12 @@ struct ContentView: View {
     var body: some View {
         SwiftyCarousel(
             items: sampleItems,
-            cardWidth: 200,
-            cardHeight: 150,
+            cardWidth: 300,
+            cardHeight: 200,
             spacing: 16,
-            inactiveCardHeight: 120,
-            inactiveCardWidth: 100,
-            cardCornerRadius: 10,
+            inactiveCardHeight: 180,
+            inactiveCardWidth: 30,
+            cardCornerRadius: 12,
             showPagingIndicator: true,
             pagingIndicatorActiveColor: .blue,
             pagingIndicatorInactiveColor: .gray,
@@ -93,6 +93,9 @@ struct ContentView: View {
     }
 }
 ```
+The above example will result in
+
+![](carousel.gif)
 
 ## Parameters
 
