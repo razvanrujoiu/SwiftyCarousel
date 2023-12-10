@@ -143,5 +143,3 @@ The size of the paging indicator dots.
 
 SwiftyCarousel is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
 ```
-
-This README includes documentation for the new parameters like `spacing`, `inactiveCardHeight`, `inactiveCardWidth`, `cardCornerRadius`, `showPagingIndicator`, `pagingIndicatorActiveColor`, `pagingIndicatorInactiveColor`, and `pagingIndicatorSize`. Adjust the example and descriptions according to your library implementation.
