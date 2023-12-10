@@ -124,7 +124,7 @@ struct Carousel<Items : View> : View {
     }
 }
 
-public struct SwiftyCarousel<T: View>: View where T:Hashable {
+public struct SwiftyCarousel<T: View>: View {
     @EnvironmentObject var carouselState: CarouselState
     public let items: [T]
     public var cardWidth: CGFloat
