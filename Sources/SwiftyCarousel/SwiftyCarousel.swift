@@ -17,10 +17,10 @@ public struct Constants {
 }
 
 public class CarouselState: ObservableObject {
-    @Published var activeCardIndex: Int = 0
-    @Published var screenDrag: Float = 0.0
+    @Published var activeCardIndex: Int
+    @Published var screenDrag: Float
     
-    public init(activeCardIndex: Int, screenDrag: Float) {
+    public init(activeCardIndex: Int = 0, screenDrag: Float = 0.0) {
         self.activeCardIndex = activeCardIndex
         self.screenDrag = screenDrag
     }
