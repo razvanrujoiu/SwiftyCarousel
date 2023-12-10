@@ -7,18 +7,23 @@
 
 import SwiftUI
 
-struct Constants {
-    static let spacing: CGFloat = 16
-    static let cardWidth: CGFloat = UIScreen.width * 0.7
-    static let cardHeight: CGFloat = cardWidth * 0.66
-    static let inactiveCardWidth: CGFloat = cardWidth * 0.15
-    static let cardRadius: CGFloat = 12
-    static let cardShadowRadius: CGFloat = 6
+public struct Constants {
+    public static let spacing: CGFloat = 16
+    public static let cardWidth: CGFloat = UIScreen.width * 0.7
+    public static let cardHeight: CGFloat = cardWidth * 0.66
+    public static let inactiveCardWidth: CGFloat = cardWidth * 0.15
+    public static let cardRadius: CGFloat = 12
+    public static let cardShadowRadius: CGFloat = 6
 }
 
 public class CarouselState: ObservableObject {
     @Published var activeCardIndex: Int = 0
     @Published var screenDrag: Float = 0.0
+    
+    public init(activeCardIndex: Int, screenDrag: Float) {
+        self.activeCardIndex = activeCardIndex
+        self.screenDrag = screenDrag
+    }
 }
 
 struct CarouselCard<Content: View>: View {
@@ -119,20 +124,20 @@ struct Carousel<Items : View> : View {
     }
 }
 
-struct SwiftyCarousel<T: View>: View where T:Hashable {
+public struct SwiftyCarousel<T: View>: View where T:Hashable {
     @EnvironmentObject var carouselState: CarouselState
-    let items: [T]
-    var cardWidth: CGFloat
-    var cardHeight: CGFloat
-    var spacing: CGFloat
-    var inactiveCardHeight: CGFloat?
-    var inactiveCardWidth: CGFloat
-    var cardCornerRadius: CGFloat
-    var showPagingIndicator: Bool
-    var pagingIndicatorActiveColor: Color
-    var pagingIndicatorInactiveColor: Color
+    public let items: [T]
+    public var cardWidth: CGFloat
+    public var cardHeight: CGFloat
+    public var spacing: CGFloat
+    public var inactiveCardHeight: CGFloat?
+    public var inactiveCardWidth: CGFloat
+    public var cardCornerRadius: CGFloat
+    public var showPagingIndicator: Bool
+    public var pagingIndicatorActiveColor: Color
+    public var pagingIndicatorInactiveColor: Color
     
-    init(items: [T],
+    public init(items: [T],
          cardWidth: CGFloat = Constants.cardWidth,
          cardHeight: CGFloat = Constants.cardHeight,
          spacing: CGFloat = Constants.spacing,
@@ -154,7 +159,7 @@ struct SwiftyCarousel<T: View>: View where T:Hashable {
         self.pagingIndicatorInactiveColor = pagingIndicatorInactiveColor
     }
         
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 16) {
             Carousel(numberOfItems: items.count,
                      spacing: spacing,
