@@ -12,6 +12,7 @@ SwiftyCarousel is a Swift library for creating a customizable carousel component
 - Set card corner radius
 - Show/hide paging indicator with customizable colors and size
 - Supports any SwiftUI Views as items
+- Requires a minimum version of iOS 15
 
 ## Installation
 
